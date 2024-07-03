@@ -6,6 +6,6 @@ let crossingCoin = new BlockChain();
 
 firstTransaction = new Transaction("Jane Doe", "John Smith", 1.0345);
 firstBlock = new Block(1, Date.now(), firstTransaction);
-crossingCoin.addNew(firstBlock);
+crossingCoin.addNewBlock(firstBlock);
 
 console.log(JSON.stringify(crossingCoin, null, 2));
