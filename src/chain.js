@@ -128,7 +128,7 @@ class BlockChain {
         let allTransactions = [];
 
         for (const block of this.chain) {
-            for (const t of block) {
+            for (const t of block.transactions) {
                 if (t.from === addr || t.to === addr) {
                     allTransactions.push(t);
                 }

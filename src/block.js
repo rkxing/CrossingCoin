@@ -1,4 +1,4 @@
-const SHA256 = require("crypto-js/SHA256");
+const crypto = require('crypto');
 const Transaction = require("./transaction")
 
 class Block {
@@ -24,7 +24,7 @@ class Block {
      * @returns {string}
      */
     createHash() {
-        return SHA256(this.index + this.timestamp + this.prevHash + this.nonce + JSON.stringify(this.transactions)).toString();
+        return crypto.createHash('sha256').update(this.timestamp + this.prevHash + this.nonce + JSON.stringify(this.transactions)).digest('hex');
     }
 
     /**
